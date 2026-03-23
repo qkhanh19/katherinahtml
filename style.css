@@ -5,7 +5,7 @@
 }
 .header{
   flex: 15%
-  blackground: url("images/att.KTH7AlZ-6bKzZse_jX8-bCaNfg2faDn2ghdPObrRvfU.jpeg") center/100% no-repeat;
+  blackground: url("image/banner.png") center/100% no-repeat;
   blackground-color: red
 }
 .menu a{
