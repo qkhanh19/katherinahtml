@@ -33,13 +33,20 @@
             Chúng tôi xin ghi nhận ý kiến của bạn và sẽ cải tiến, nâng cao
             chất lượng phục vụ hơn nữa trong thời gian sắp tới.
         </p>
+
+        <button onclick="quayLai()">Quay lại</button>
     </div>
 
     <script>
         function hienThiPhanHoi() {
             document.querySelector("form").style.display = "none";
             document.getElementById("phanHoi").style.display = "block";
-            return false; // chặn reload trang
+            return false;
+        }
+
+        function quayLai() {
+            document.querySelector("form").style.display = "block";
+            document.getElementById("phanHoi").style.display = "none";
         }
     </script>
 
