@@ -2,31 +2,46 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Thực hành tạo biểu mẫu</title>
+    <title>Góp ý thư viện</title>
 </head>
 <body>
-    <h2>Đóng góp ý kiến cho thư viện của nhà trường</h2>
-    <form>
-        <h3>1. Thông tin về người góp ý</h3>
-        <label>Họ và tên: </label>
-        <input type="text" name="txtTen"><br></br>
-        <label>Địa chỉ email: </label>
-        <input type="text" name="txtEmail"><br>
-        <h3>2. Đóng góp ý kiến</h3>
-        <label>Ý kiến đóng góp:</label><br>
-        <textarea name="txtComment" rows="6" cols="40"></textarea>
-        <br></br>
-           <label>Thể loại cần bổ sung thêm sách</label><br>
-        <input type="checkbox" name="chkTruyenNgan"> Truyện ngắn <br>
-        <input type="checkbox" name="chkKiNang"> Kĩ năng sống <br>
-        <input type="checkbox" name="chkCNTT"> Công nghệ thông tin <br>
-        <input type="checkbox" name="chkTruyenTranh"> Truyện tranh <br>
-        <input type="checkbox" name="chkLichSu"> Lịch sử <br>
 
-        <br>
-        <input type="submit" name="cmd" value="Góp ý">
+    <h2>Đóng góp ý kiến cho thư viện của nhà trường</h2>
+
+    <form onsubmit="return hienThiPhanHoi()">
+        <h3>1. Thông tin về người góp ý</h3>
+        Họ và tên: <input type="text"><br>
+        Địa chỉ email: <input type="text"><br>
+
+        <h3>2. Đóng góp ý kiến</h3>
+        Ý kiến đóng góp:<br>
+        <textarea rows="5" cols="40"></textarea><br>
+
+        Thể loại cần bổ sung thêm sách:<br>
+        <input type="checkbox"> Truyện ngắn <br>
+        <input type="checkbox"> Kĩ năng sống <br>
+        <input type="checkbox"> Công nghệ thông tin <br>
+        <input type="checkbox"> Truyện tranh <br>
+        <input type="checkbox"> Lịch sử <br><br>
+
+        <input type="submit" value="Góp ý">
     </form>
-        <input type="submit" value="Gửi ý kiến">
-    </form>
+
+    <div id="phanHoi" style="display:none; margin-top:20px;">
+        <h2>Cảm ơn bạn đã góp ý kiến</h2>
+        <p>
+            Chúng tôi xin ghi nhận ý kiến của bạn và sẽ cải tiến, nâng cao
+            chất lượng phục vụ hơn nữa trong thời gian sắp tới.
+        </p>
+    </div>
+
+    <script>
+        function hienThiPhanHoi() {
+            document.querySelector("form").style.display = "none";
+            document.getElementById("phanHoi").style.display = "block";
+            return false; // chặn reload trang
+        }
+    </script>
+
 </body>
 </html>
