@@ -1,55 +1,104 @@
-.container{
-  display: flex;
-  flex-direction: column;
-  height: 180vn;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.header{
-  flex: 15%;
-  blackground: url("image/banner.png") center/100% no-repeat;
 
+
+html, body {
+    height: 100%;
+    overflow: hidden; 
 }
-.menu a{
-  flex: 5%;
-  blackground-color: black;
-  display: flex;
-  align-items: center;
+
+.container {
+    display: flex;
+    flex-direction: column; 
+    height: 100vh; 
 }
-.content{
-  flex: 70%;
-  blackground-color: lightpink;
+
+
+.header {
+    flex: 0 0 auto; 
+    width: 100%;
+    background-color: lightgray;
 }
-.footer{
-  flex: 10%;
-  blackground-color: white;
+
+.header img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
-iframe{
-  border: none;
-  width: 100%;
-  height: 0;
+
+
+.menu {
+    flex: 0 0 auto; 
+    background-color: #2c3e50; 
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
 }
-.content iframe{
-  flex: 1;
-  width: 100%;
-  height: 100%;
-  border: none;
+
+.menu a {
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 14px;
 }
-h1 {
-  color: red;
+
+.menu a:hover {
+    background-color: #1a252f;
 }
-.f1 {
-  color: purple;
- margin-top: 18pt;
- margin-bottom: 12pt;
- font-size: 20pt;
- font-weight: bold;
- font-family: "Times New Roman";
- font-style: italic;
+
+
+.content {
+    flex: 1 1 auto; 
+    display: flex;
+    background-color: white;
 }
-.f2 {
-  color: black;
- margin-top: 8pt;
- margin-bottom: 6pt;
- font-size: 15pt; 
- font-style: normal;
- font-family: "Times New Roman";
+
+
+.content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+.footer {
+    flex: 0 0 auto;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-family: Arial;
+    font-size: 13px;
+}
+/* 1. Chỉnh lại khung Header để hiện đầy đủ nội dung */
+.header {
+    width: 100%;
+    height: auto;          /* Để chiều cao tự động theo ảnh, không bị cắt nửa */
+    max-height: 280px;     /* Giới hạn tối đa để không quá to trên máy tính */
+    overflow: hidden;
+    background-color: #001a33; 
+    display: block;
+}
+
+/* 2. Ép ảnh hiển thị trọn vẹn nhất có thể */
+.Banner-png {
+    width: 100%;
+    height: auto;          /* Giữ đúng tỷ lệ gốc của ảnh */
+    display: block;
+    
+    /* Nếu bạn muốn dùng chiều cao cố định mà không mất chữ, 
+       hãy dùng 'contain' thay vì 'cover' */
+    object-fit: contain;   
+    background-color: #001a33; /* Màu nền bù vào nếu ảnh không khít khung */
+}
+
+/* 3. Một mẹo nhỏ cho thiết bị di động (như ảnh điện thoại bạn gửi) */
+@media (max-width: 768px) {
+    .header {
+        max-height: 150px; /* Trên điện thoại thì để nhỏ lại cho vừa màn hình */
+    }
 }
