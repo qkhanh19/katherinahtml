@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng Ký Hội Thao</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f0f8ff;
+            margin: 0;
+        }
+
+        header {
+            background: #0077b6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 400px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+
+        button {
+            background: #0077b6;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #023e8a;
+        }
+
+        #thankYou {
+            display: none;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>ĐĂNG KÝ HỘI THAO TRƯỜNG</h1>
+    <p>Vui lòng điền đầy đủ thông tin</p>
+</header>
+
+<div class="container" id="formSection">
+    <form onsubmit="return submitForm()">
+        <label>Họ và tên:</label>
+        <input type="text" required>
+
+        <label>Lớp:</label>
+        <input type="text" required>
+
+        <label>Số điện thoại:</label>
+        <input type="tel" required>
+
+        <label>Môn thi đấu:</label>
+        <select required>
+            <option value="">-- Chọn môn --</option>
+            <option>Bóng đá</option>
+            <option>Bóng chuyền</option>
+            <option>Cầu lông</option>
+            <option>Chạy bộ</option>
+        </select>
+
+        <label>Giới tính:</label>
+        <select required>
+            <option>Nam</option>
+            <option>Nữ</option>
+        </select>
+
+        <button type="submit">Gửi đăng ký</button>
+    </form>
+</div>
+
+<div class="container" id="thankYou">
+    <h1>🎉 Đăng ký thành công!</h1>
+    <p>Cảm ơn bạn đã tham gia hội thao.</p>
+    <button onclick="goBack()">Quay lại</button>
+</div>
+
+<script>
+function submitForm() {
+    document.getElementById("formSection").style.display = "none";
+    document.getElementById("thankYou").style.display = "block";
+    return false;
+}
+
+function goBack() {
+    document.getElementById("formSection").style.display = "block";
+    document.getElementById("thankYou").style.display = "none";
+}
+</script>
+
+</body>
+</html>
